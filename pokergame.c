@@ -38,3 +38,13 @@ bool compareCards(const card& c1, const card&c2)
 return c1.value < c2.value;//True False
 }
 
+
+/* check for flush */
+/* check for straight */
+int isStraightFlush(vector<card> Hand)
+{
+int IValue = Hand[0].value;
+char ISuit = Hand[0].suit;
+for (int i=1; i<5; i++) if (Hand[i].value != IValue+i || Hand[i].suit != ISuit) return -1;
+return Hand[4].value;
+}
